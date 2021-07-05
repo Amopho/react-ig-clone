@@ -1,70 +1,120 @@
+# infinite-scroll :scroll:
+
+An approach to the infinite scroll list made in ReactJS.
+
+![Preview](./public/favicon.ico)
+
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## ReactJs
 
-## Available Scripts
+A JavaScript library to build web apps
+what makes React so special
 
-In the project directory, you can run:
+- Components
+- State
 
-### `npm start`
+# files in React
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## manifest.json
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The web app manifest provides information about an application (such as name, author, icon, and description) in a JSON text file
 
-### `npm test`
+## reportwebvitals
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Tool for measuring the real life performance of your app(very new to React)
+more on that [web-vitals](https://www.npmjs.com/package/web-vitals)
 
-### `npm run build`
+## To start React Project with sass styling
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+ $ npx create-react-app <app-name>
+ $ cd <app-name>
+ $ npm i node-sass
+ $ npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Deploy React apps in GH pages
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# step 1
 
-### `npm run eject`
+Installing gh-pages package
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+$ npm install gh-pages
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# step 2
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Adding homepage into **package.json**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+"homepage": "http://<your-gh-username>.github.io/<your-repo-name>"
 
-## Learn More
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# step 3
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Adding some more scripts into **package.json**
 
-### Code Splitting
+```
+"scripts": {
+//...
+"predeploy": "npm run build",
+"deploy": "gh-pages -d build",
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# step 4
 
-### Analyzing the Bundle Size
+Lastly run build script to generate build dir
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+$ npm rum build
+$ npm run deploy
+```
 
-### Making a Progressive Web App
+## To install fontawesome icons packages
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
+ $ npm i --save @fortawesome/fontawesome-svg-core
+ $ npm install --save @fortawesome/free-solid-svg-icons
+ $ npm install --save @fortawesome/react-fontawesome
+ $ npm install --save @fortawesome/free-brands-svg-icons
+ $ npm install --save @fortawesome/free-regular-svg-icons
+```
 
-### Advanced Configuration
+## To install react icons package
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+$ npm install react-icons --save
+```
 
-### Deployment
+### To use fontawesome icons via Individual Use
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Import icons into each component.
 
-### `npm run build` fails to minify
+```
+ $ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+ $ import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+ $ const element = <FontAwesomeIcon icon={faCoffee} />
+ $ ReactDOM.render(element, document.body)
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Installing Router to handle links
+
+```
+ $ npm install react-router-dom
+```
+
+## Installing Bootstrap to handle predefined styles
+
+```
+ $ npm install react-bootstrap bootstrap@5.0.1
+```
+
+## Scss style
+
+```
+$ npm install normalize-scss
+```
